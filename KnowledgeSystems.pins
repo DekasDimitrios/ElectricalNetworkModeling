@@ -1,0 +1,160 @@
+; Mon Nov 16 23:16:24 EET 2020
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+([KnowledgeSystems_Class10021] of  Output+Sensor
+
+	(input_from [KnowledgeSystems_Class26])
+	(label "OUT")
+	(output_to [KnowledgeSystems_Class26])
+	(state Normal))
+
+([KnowledgeSystems_Class11] of  Input+Reading
+
+	(reads_from [KnowledgeSystems_Class21])
+	(value 21))
+
+([KnowledgeSystems_Class12] of  Input+Reading
+
+	(reads_from [KnowledgeSystems_Class22])
+	(value 28))
+
+([KnowledgeSystems_Class13] of  Input+Reading
+
+	(reads_from [KnowledgeSystems_Class23])
+	(value 10))
+
+([KnowledgeSystems_Class14] of  Input+Reading
+
+	(reads_from [KnowledgeSystems_Class24])
+	(value 25))
+
+([KnowledgeSystems_Class15] of  Sensor+Reading
+
+	(reads_from [KnowledgeSystems_Class31])
+	(value 10))
+
+([KnowledgeSystems_Class16] of  Sensor+Reading
+
+	(reads_from [KnowledgeSystems_Class32])
+	(value 24))
+
+([KnowledgeSystems_Class17] of  Sensor+Reading
+
+	(reads_from [KnowledgeSystems_Class33])
+	(value 26))
+
+([KnowledgeSystems_Class19] of  Output+Reading
+
+	(reads_from [KnowledgeSystems_Class10021])
+	(value 18))
+
+([KnowledgeSystems_Class21] of  System+Input
+
+	(label "Είσοδος 1"))
+
+([KnowledgeSystems_Class22] of  System+Input
+
+	(label "Είσοδος 2"))
+
+([KnowledgeSystems_Class23] of  System+Input
+
+	(label "Είσοδος 3"))
+
+([KnowledgeSystems_Class24] of  System+Input
+
+	(label "Είσοδος 4"))
+
+([KnowledgeSystems_Class26] of  System+Output
+
+	(label "Έξοδος"))
+
+([KnowledgeSystems_Class27] of  Adder
+
+	(input_from
+		[KnowledgeSystems_Class21]
+		[KnowledgeSystems_Class21])
+	(label "A1")
+	(output_to [KnowledgeSystems_Class31])
+	(state Normal))
+
+([KnowledgeSystems_Class28] of  Adder
+
+	(input_from
+		[KnowledgeSystems_Class32]
+		[KnowledgeSystems_Class33])
+	(label "A2")
+	(output_to [KnowledgeSystems_Class26])
+	(state Normal))
+
+([KnowledgeSystems_Class29] of  Multiplier
+
+	(input_from
+		[KnowledgeSystems_Class22]
+		[KnowledgeSystems_Class31])
+	(label "Π1")
+	(output_to [KnowledgeSystems_Class32])
+	(state Normal))
+
+([KnowledgeSystems_Class30] of  Multiplier
+
+	(input_from
+		[KnowledgeSystems_Class23]
+		[KnowledgeSystems_Class24])
+	(label "Π2")
+	(output_to [KnowledgeSystems_Class33])
+	(state Normal))
+
+([KnowledgeSystems_Class31] of  Sensor
+
+	(input_from [KnowledgeSystems_Class27])
+	(label "Μ1")
+	(output_to [KnowledgeSystems_Class29])
+	(state Normal))
+
+([KnowledgeSystems_Class32] of  Sensor
+
+	(input_from [KnowledgeSystems_Class29])
+	(label "Μ2")
+	(output_to [KnowledgeSystems_Class28])
+	(state Normal))
+
+([KnowledgeSystems_Class33] of  Sensor
+
+	(input_from [KnowledgeSystems_Class30])
+	(label "Μ3")
+	(output_to [KnowledgeSystems_Class28])
+	(state Normal))
+
+([KnowledgeSystems_Class38] of  Electrical+Network
+
+	(cycles [KnowledgeSystems_Class39])
+	(has_ic
+		[KnowledgeSystems_Class27]
+		[KnowledgeSystems_Class28]
+		[KnowledgeSystems_Class29]
+		[KnowledgeSystems_Class30]
+		[KnowledgeSystems_Class31]
+		[KnowledgeSystems_Class32]
+		[KnowledgeSystems_Class33])
+	(has_inputs
+		[KnowledgeSystems_Class21]
+		[KnowledgeSystems_Class22]
+		[KnowledgeSystems_Class23]
+		[KnowledgeSystems_Class24])
+	(has_output [KnowledgeSystems_Class26]))
+
+([KnowledgeSystems_Class39] of  Operation+Cycle
+
+	(id 1)
+	(input_readings
+		[KnowledgeSystems_Class11]
+		[KnowledgeSystems_Class12]
+		[KnowledgeSystems_Class13]
+		[KnowledgeSystems_Class14])
+	(output_reading [KnowledgeSystems_Class19])
+	(sensor_readings
+		[KnowledgeSystems_Class15]
+		[KnowledgeSystems_Class16]
+		[KnowledgeSystems_Class17]))
