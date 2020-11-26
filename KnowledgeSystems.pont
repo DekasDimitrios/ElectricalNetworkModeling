@@ -1,4 +1,4 @@
-; Mon Nov 16 23:16:24 EET 2020
+; Thu Nov 26 17:24:13 EET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -157,16 +157,24 @@
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write)))
 
-(defclass Adder
+(defclass Logical
 	(is-a Integrated+Circuit)
+	(role abstract))
+
+(defclass Adder
+	(is-a Logical)
 	(role concrete))
 
 (defclass Multiplier
-	(is-a Integrated+Circuit)
+	(is-a Logical)
 	(role concrete))
 
-(defclass Sensor
+(defclass Passthrough
 	(is-a Integrated+Circuit)
+	(role abstract))
+
+(defclass Sensor
+	(is-a Passthrough)
 	(role concrete)
 	(single-slot state
 		(type SYMBOL)

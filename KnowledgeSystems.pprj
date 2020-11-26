@@ -1,4 +1,4 @@
-; Mon Nov 16 23:16:24 EET 2020
+; Thu Nov 26 17:24:13 EET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,19 +20,19 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[KnowledgeSystems_ProjectKB_Class10298]
-		[KnowledgeSystems_ProjectKB_Class10299]
-		[KnowledgeSystems_ProjectKB_Class10300]
-		[KnowledgeSystems_ProjectKB_Class10301]
-		[KnowledgeSystems_ProjectKB_Class10302]
-		[KnowledgeSystems_ProjectKB_Class10303]
-		[KnowledgeSystems_ProjectKB_Class10304]
-		[KnowledgeSystems_ProjectKB_Class10305]
-		[KnowledgeSystems_ProjectKB_Class10306]
-		[KnowledgeSystems_ProjectKB_Class10307]
-		[KnowledgeSystems_ProjectKB_Class10308]
-		[KnowledgeSystems_ProjectKB_Class10309]
-		[KnowledgeSystems_ProjectKB_Class10310]))
+		[KnowledgeSystems_ProjectKB_Class10187]
+		[KnowledgeSystems_ProjectKB_Class10188]
+		[KnowledgeSystems_ProjectKB_Class10189]
+		[KnowledgeSystems_ProjectKB_Class10190]
+		[KnowledgeSystems_ProjectKB_Class10191]
+		[KnowledgeSystems_ProjectKB_Class10192]
+		[KnowledgeSystems_ProjectKB_Class10193]
+		[KnowledgeSystems_ProjectKB_Class10194]
+		[KnowledgeSystems_ProjectKB_Class10195]
+		[KnowledgeSystems_ProjectKB_Class10196]
+		[KnowledgeSystems_ProjectKB_Class10197]
+		[KnowledgeSystems_ProjectKB_Class10198]
+		[KnowledgeSystems_ProjectKB_Class10199]))
 
 ([CLSES_TAB] of  Widget
 
@@ -173,7 +173,7 @@
 	(name "classes_file_name")
 	(string_value "KnowledgeSystems.pont"))
 
-([KB_662724_Class0] of  Map
+([KB_487899_Class0] of  Map
 )
 
 ([KnowledgeSystems_ProjectKB_Class1] of  Widget
@@ -189,206 +189,67 @@
 
 	(name "SearchTab_Query"))
 
-([KnowledgeSystems_ProjectKB_Class10144] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "input_readings")
-	(property_list [KnowledgeSystems_ProjectKB_Class10145])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 60))
-
-([KnowledgeSystems_ProjectKB_Class10145] of  Property_List
-)
-
-([KnowledgeSystems_ProjectKB_Class10146] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "input_readings")
-	(property_list [KnowledgeSystems_ProjectKB_Class10147])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
-	(width 100)
-	(x 0)
-	(y 60))
-
-([KnowledgeSystems_ProjectKB_Class10147] of  Property_List
-)
-
-([KnowledgeSystems_ProjectKB_Class10148] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(name "input_readings")
-	(property_list [KnowledgeSystems_ProjectKB_Class10149])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerListWidget")
-	(width 200)
-	(x 0)
-	(y 60))
-
-([KnowledgeSystems_ProjectKB_Class10149] of  Property_List
-)
-
-([KnowledgeSystems_ProjectKB_Class10150] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "sensor_readings")
-	(property_list [KnowledgeSystems_ProjectKB_Class10151])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([KnowledgeSystems_ProjectKB_Class10151] of  Property_List
-)
-
-([KnowledgeSystems_ProjectKB_Class10152] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "sensor_readings")
-	(property_list [KnowledgeSystems_ProjectKB_Class10153])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
-	(width 100)
-	(x 0)
-	(y 180))
-
-([KnowledgeSystems_ProjectKB_Class10153] of  Property_List
-)
-
-([KnowledgeSystems_ProjectKB_Class10154] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(name "sensor_readings")
-	(property_list [KnowledgeSystems_ProjectKB_Class10155])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerListWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([KnowledgeSystems_ProjectKB_Class10155] of  Property_List
-)
-
-([KnowledgeSystems_ProjectKB_Class10156] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "output_reading")
-	(property_list [KnowledgeSystems_ProjectKB_Class10157])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 300))
-
-([KnowledgeSystems_ProjectKB_Class10157] of  Property_List
-)
-
-([KnowledgeSystems_ProjectKB_Class10158] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "output_reading")
-	(property_list [KnowledgeSystems_ProjectKB_Class10159])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 300))
-
-([KnowledgeSystems_ProjectKB_Class10159] of  Property_List
-
-	(properties
-		[KnowledgeSystems_ProjectKB_Class10160]
-		[KnowledgeSystems_ProjectKB_Class10161]))
-
-([KnowledgeSystems_ProjectKB_Class10160] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([KnowledgeSystems_ProjectKB_Class10161] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([KnowledgeSystems_ProjectKB_Class10162] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "output_reading")
-	(property_list [KnowledgeSystems_ProjectKB_Class10163])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
-	(width 100)
-	(x 0)
-	(y 300))
-
-([KnowledgeSystems_ProjectKB_Class10163] of  Property_List
-)
-
-([KnowledgeSystems_ProjectKB_Class10298] of  String
+([KnowledgeSystems_ProjectKB_Class10187] of  String
 
 	(name "System Input")
 	(string_value "label"))
 
-([KnowledgeSystems_ProjectKB_Class10299] of  String
+([KnowledgeSystems_ProjectKB_Class10188] of  String
 
 	(name "Sensor")
 	(string_value "label"))
 
-([KnowledgeSystems_ProjectKB_Class10300] of  String
+([KnowledgeSystems_ProjectKB_Class10189] of  String
 
 	(name "Integrated Circuit")
 	(string_value "label"))
 
-([KnowledgeSystems_ProjectKB_Class10301] of  String
+([KnowledgeSystems_ProjectKB_Class10190] of  String
 
 	(name "Operation Cycle")
 	(string_value "id"))
 
-([KnowledgeSystems_ProjectKB_Class10302] of  String
+([KnowledgeSystems_ProjectKB_Class10191] of  String
 
 	(name "Reading")
 	(string_value "reads_from{+-+}value"))
 
-([KnowledgeSystems_ProjectKB_Class10303] of  String
+([KnowledgeSystems_ProjectKB_Class10192] of  String
 
 	(name "System Output")
 	(string_value "label"))
 
-([KnowledgeSystems_ProjectKB_Class10304] of  String
+([KnowledgeSystems_ProjectKB_Class10193] of  String
 
 	(name "System Component")
 	(string_value "label"))
 
-([KnowledgeSystems_ProjectKB_Class10305] of  String
+([KnowledgeSystems_ProjectKB_Class10194] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([KnowledgeSystems_ProjectKB_Class10306] of  String
+([KnowledgeSystems_ProjectKB_Class10195] of  String
 
 	(name "Multiplier")
 	(string_value "label"))
 
-([KnowledgeSystems_ProjectKB_Class10307] of  String
+([KnowledgeSystems_ProjectKB_Class10196] of  String
 
 	(name "Input Reading")
 	(string_value "reads_from{+-+}value"))
 
-([KnowledgeSystems_ProjectKB_Class10308] of  String
+([KnowledgeSystems_ProjectKB_Class10197] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([KnowledgeSystems_ProjectKB_Class10309] of  String
+([KnowledgeSystems_ProjectKB_Class10198] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([KnowledgeSystems_ProjectKB_Class10310] of  String
+([KnowledgeSystems_ProjectKB_Class10199] of  String
 
 	(name "Adder")
 	(string_value "label"))
@@ -799,9 +660,9 @@
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
-		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET]
 		[PAL_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
