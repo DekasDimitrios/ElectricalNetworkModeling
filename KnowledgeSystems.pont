@@ -1,4 +1,4 @@
-; Thu Nov 26 17:24:13 EET 2020
+; Thu Nov 26 18:18:36 EET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -48,7 +48,7 @@
 		(create-accessor read-write))
 	(single-slot state
 		(type SYMBOL)
-		(allowed-values Normal ShortCircuit CutOff)
+		(allowed-values Normal ShortCircuit)
 		(default Normal)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
@@ -142,7 +142,7 @@
 	(role abstract)
 	(single-slot state
 		(type SYMBOL)
-		(allowed-values Normal ShortCircuit CutOff)
+		(allowed-values Normal ShortCircuit)
 		(default Normal)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
@@ -159,7 +159,13 @@
 
 (defclass Logical
 	(is-a Integrated+Circuit)
-	(role abstract))
+	(role abstract)
+	(single-slot state
+		(type SYMBOL)
+		(allowed-values Normal ShortCircuit CutOff)
+		(default Normal)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
 
 (defclass Adder
 	(is-a Logical)
