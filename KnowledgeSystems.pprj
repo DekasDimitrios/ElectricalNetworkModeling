@@ -1,4 +1,4 @@
-; Thu Nov 26 18:18:36 EET 2020
+; Tue Dec 01 19:13:10 EET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,19 +20,19 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[KnowledgeSystems_ProjectKB_Class75]
-		[KnowledgeSystems_ProjectKB_Class76]
-		[KnowledgeSystems_ProjectKB_Class77]
-		[KnowledgeSystems_ProjectKB_Class78]
-		[KnowledgeSystems_ProjectKB_Class79]
-		[KnowledgeSystems_ProjectKB_Class80]
-		[KnowledgeSystems_ProjectKB_Class81]
-		[KnowledgeSystems_ProjectKB_Class82]
-		[KnowledgeSystems_ProjectKB_Class83]
-		[KnowledgeSystems_ProjectKB_Class84]
-		[KnowledgeSystems_ProjectKB_Class85]
-		[KnowledgeSystems_ProjectKB_Class86]
-		[KnowledgeSystems_ProjectKB_Class87]))
+		[KnowledgeSystems_ProjectKB_Class10101]
+		[KnowledgeSystems_ProjectKB_Class10102]
+		[KnowledgeSystems_ProjectKB_Class10103]
+		[KnowledgeSystems_ProjectKB_Class10104]
+		[KnowledgeSystems_ProjectKB_Class10105]
+		[KnowledgeSystems_ProjectKB_Class10106]
+		[KnowledgeSystems_ProjectKB_Class10107]
+		[KnowledgeSystems_ProjectKB_Class10108]
+		[KnowledgeSystems_ProjectKB_Class10109]
+		[KnowledgeSystems_ProjectKB_Class10110]
+		[KnowledgeSystems_ProjectKB_Class10111]
+		[KnowledgeSystems_ProjectKB_Class10112]
+		[KnowledgeSystems_ProjectKB_Class10113]))
 
 ([CLSES_TAB] of  Widget
 
@@ -173,7 +173,7 @@
 	(name "classes_file_name")
 	(string_value "KnowledgeSystems.pont"))
 
-([KB_836988_Class0] of  Map
+([KB_806959_Class0] of  Map
 )
 
 ([KnowledgeSystems_ProjectKB_Class1] of  Widget
@@ -188,6 +188,71 @@
 ([KnowledgeSystems_ProjectKB_Class101] of  String
 
 	(name "SearchTab_Query"))
+
+([KnowledgeSystems_ProjectKB_Class10101] of  String
+
+	(name "System Input")
+	(string_value "label"))
+
+([KnowledgeSystems_ProjectKB_Class10102] of  String
+
+	(name "Sensor")
+	(string_value "label"))
+
+([KnowledgeSystems_ProjectKB_Class10103] of  String
+
+	(name "Integrated Circuit")
+	(string_value "label"))
+
+([KnowledgeSystems_ProjectKB_Class10104] of  String
+
+	(name "Operation Cycle")
+	(string_value "id"))
+
+([KnowledgeSystems_ProjectKB_Class10105] of  String
+
+	(name "Reading")
+	(string_value "reads_from{+-+}value"))
+
+([KnowledgeSystems_ProjectKB_Class10106] of  String
+
+	(name "System Output")
+	(string_value "label"))
+
+([KnowledgeSystems_ProjectKB_Class10107] of  String
+
+	(name "System Component")
+	(string_value "label"))
+
+([KnowledgeSystems_ProjectKB_Class10108] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([KnowledgeSystems_ProjectKB_Class10109] of  String
+
+	(name "Multiplier")
+	(string_value "label"))
+
+([KnowledgeSystems_ProjectKB_Class10110] of  String
+
+	(name "Input Reading")
+	(string_value "reads_from{+-+}value"))
+
+([KnowledgeSystems_ProjectKB_Class10111] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([KnowledgeSystems_ProjectKB_Class10112] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([KnowledgeSystems_ProjectKB_Class10113] of  String
+
+	(name "Adder")
+	(string_value "label"))
 
 ([KnowledgeSystems_ProjectKB_Class11] of  Widget
 
@@ -504,73 +569,8 @@
 ([KnowledgeSystems_ProjectKB_Class74] of  Property_List
 )
 
-([KnowledgeSystems_ProjectKB_Class75] of  String
-
-	(name "System Input")
-	(string_value "label"))
-
-([KnowledgeSystems_ProjectKB_Class76] of  String
-
-	(name "Sensor")
-	(string_value "label"))
-
-([KnowledgeSystems_ProjectKB_Class77] of  String
-
-	(name "Integrated Circuit")
-	(string_value "label"))
-
-([KnowledgeSystems_ProjectKB_Class78] of  String
-
-	(name "Operation Cycle")
-	(string_value "id"))
-
-([KnowledgeSystems_ProjectKB_Class79] of  String
-
-	(name "Reading")
-	(string_value "reads_from{+-+}value"))
-
 ([KnowledgeSystems_ProjectKB_Class8] of  Property_List
 )
-
-([KnowledgeSystems_ProjectKB_Class80] of  String
-
-	(name "System Output")
-	(string_value "label"))
-
-([KnowledgeSystems_ProjectKB_Class81] of  String
-
-	(name "System Component")
-	(string_value "label"))
-
-([KnowledgeSystems_ProjectKB_Class82] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([KnowledgeSystems_ProjectKB_Class83] of  String
-
-	(name "Multiplier")
-	(string_value "label"))
-
-([KnowledgeSystems_ProjectKB_Class84] of  String
-
-	(name "Input Reading")
-	(string_value "reads_from{+-+}value"))
-
-([KnowledgeSystems_ProjectKB_Class85] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([KnowledgeSystems_ProjectKB_Class86] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([KnowledgeSystems_ProjectKB_Class87] of  String
-
-	(name "Adder")
-	(string_value "label"))
 
 ([KnowledgeSystems_ProjectKB_Class9] of  Widget
 

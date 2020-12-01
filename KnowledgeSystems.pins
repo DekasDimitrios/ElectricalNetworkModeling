@@ -1,4 +1,4 @@
-; Thu Nov 26 18:18:36 EET 2020
+; Tue Dec 01 19:13:10 EET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -143,7 +143,7 @@
 		[KnowledgeSystems_Class22]
 		[KnowledgeSystems_Class23]
 		[KnowledgeSystems_Class24])
-	(has_output [KnowledgeSystems_Class26]))
+	(has_outputs [KnowledgeSystems_Class26]))
 
 ([KnowledgeSystems_Class39] of  Operation+Cycle
 
@@ -153,7 +153,7 @@
 		[KnowledgeSystems_Class12]
 		[KnowledgeSystems_Class13]
 		[KnowledgeSystems_Class14])
-	(output_reading [KnowledgeSystems_Class19])
+	(output_readings [KnowledgeSystems_Class19])
 	(sensor_readings
 		[KnowledgeSystems_Class15]
 		[KnowledgeSystems_Class16]

@@ -1,4 +1,4 @@
-; Thu Nov 26 18:18:36 EET 2020
+; Tue Dec 01 19:13:10 EET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -17,6 +17,11 @@
 		(cardinality 1 ?VARIABLE)
 ;+		(inverse-slot output_to)
 		(create-accessor read-write))
+	(multislot has_outputs
+		(type INSTANCE)
+;+		(allowed-classes System+Output)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
 	(multislot output_to
 		(type INSTANCE)
 ;+		(allowed-classes System+Component)
@@ -32,10 +37,10 @@
 ;+		(allowed-classes System+Input)
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
-	(single-slot has_output
+	(multislot output_readings
 		(type INSTANCE)
-;+		(allowed-classes System+Output)
-;+		(cardinality 1 1)
+;+		(allowed-classes Output+Reading)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot reads_from
 		(type INSTANCE)
@@ -69,11 +74,6 @@
 		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot output_reading
-		(type INSTANCE)
-;+		(allowed-classes Output+Reading)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(multislot input_readings
 		(type INSTANCE)
 ;+		(allowed-classes Input+Reading)
@@ -97,10 +97,10 @@
 ;+		(allowed-classes System+Input)
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
-	(single-slot has_output
+	(multislot has_outputs
 		(type INSTANCE)
 ;+		(allowed-classes System+Output)
-;+		(cardinality 1 1)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(multislot has_ic
 		(type INSTANCE)
@@ -110,6 +110,11 @@
 (defclass Operation+Cycle
 	(is-a USER)
 	(role concrete)
+	(multislot output_readings
+		(type INSTANCE)
+;+		(allowed-classes Output+Reading)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
 	(multislot sensor_readings
 		(type INSTANCE)
 ;+		(allowed-classes Sensor+Reading)
@@ -122,11 +127,6 @@
 		(type INSTANCE)
 ;+		(allowed-classes Input+Reading)
 		(cardinality 1 ?VARIABLE)
-		(create-accessor read-write))
-	(single-slot output_reading
-		(type INSTANCE)
-;+		(allowed-classes Output+Reading)
-;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
 (defclass System+Component
@@ -181,13 +181,7 @@
 
 (defclass Sensor
 	(is-a Passthrough)
-	(role concrete)
-	(single-slot state
-		(type SYMBOL)
-		(allowed-values Normal ShortCircuit)
-		(default Normal)
-;+		(cardinality 1 1)
-		(create-accessor read-write)))
+	(role concrete))
 
 (defclass Output+Sensor
 	(is-a Sensor)
