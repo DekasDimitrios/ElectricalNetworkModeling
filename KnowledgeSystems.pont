@@ -1,0 +1,251 @@
+; Tue Dec 01 19:13:10 EET 2020
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot label
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot input_from
+		(type INSTANCE)
+;+		(allowed-classes System+Component)
+		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot output_to)
+		(create-accessor read-write))
+	(multislot has_outputs
+		(type INSTANCE)
+;+		(allowed-classes System+Output)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot output_to
+		(type INSTANCE)
+;+		(allowed-classes System+Component)
+		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot input_from)
+		(create-accessor read-write))
+	(multislot has_ic
+		(type INSTANCE)
+;+		(allowed-classes Integrated+Circuit)
+		(create-accessor read-write))
+	(multislot has_inputs
+		(type INSTANCE)
+;+		(allowed-classes System+Input)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot output_readings
+		(type INSTANCE)
+;+		(allowed-classes Output+Reading)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot reads_from
+		(type INSTANCE)
+;+		(allowed-classes System+Component)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot cycles
+		(type INSTANCE)
+;+		(allowed-classes Operation+Cycle)
+		(create-accessor read-write))
+	(single-slot state
+		(type SYMBOL)
+		(allowed-values Normal ShortCircuit)
+		(default Normal)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot reads
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot sensor_readings
+		(type INSTANCE)
+;+		(allowed-classes Sensor+Reading)
+		(create-accessor read-write))
+	(single-slot value
+		(type INTEGER)
+		(range 0 31)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot id
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot input_readings
+		(type INSTANCE)
+;+		(allowed-classes Input+Reading)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot reads_from_input
+		(type INSTANCE)
+;+		(allowed-classes System+Input)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Electrical+Network
+	(is-a USER)
+	(role concrete)
+	(multislot cycles
+		(type INSTANCE)
+;+		(allowed-classes Operation+Cycle)
+		(create-accessor read-write))
+	(multislot has_inputs
+		(type INSTANCE)
+;+		(allowed-classes System+Input)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot has_outputs
+		(type INSTANCE)
+;+		(allowed-classes System+Output)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot has_ic
+		(type INSTANCE)
+;+		(allowed-classes Integrated+Circuit)
+		(create-accessor read-write)))
+
+(defclass Operation+Cycle
+	(is-a USER)
+	(role concrete)
+	(multislot output_readings
+		(type INSTANCE)
+;+		(allowed-classes Output+Reading)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot sensor_readings
+		(type INSTANCE)
+;+		(allowed-classes Sensor+Reading)
+		(create-accessor read-write))
+	(single-slot id
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot input_readings
+		(type INSTANCE)
+;+		(allowed-classes Input+Reading)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write)))
+
+(defclass System+Component
+	(is-a USER)
+	(role abstract)
+	(single-slot label
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Integrated+Circuit
+	(is-a System+Component)
+	(role abstract)
+	(single-slot state
+		(type SYMBOL)
+		(allowed-values Normal ShortCircuit)
+		(default Normal)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot input_from
+		(type INSTANCE)
+;+		(allowed-classes System+Component)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot output_to
+		(type INSTANCE)
+;+		(allowed-classes System+Component)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write)))
+
+(defclass Logical
+	(is-a Integrated+Circuit)
+	(role abstract)
+	(single-slot state
+		(type SYMBOL)
+		(allowed-values Normal ShortCircuit CutOff)
+		(default Normal)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Adder
+	(is-a Logical)
+	(role concrete))
+
+(defclass Multiplier
+	(is-a Logical)
+	(role concrete))
+
+(defclass Passthrough
+	(is-a Integrated+Circuit)
+	(role abstract))
+
+(defclass Sensor
+	(is-a Passthrough)
+	(role concrete))
+
+(defclass Output+Sensor
+	(is-a Sensor)
+	(role concrete)
+	(multislot input_from
+		(type INSTANCE)
+;+		(allowed-classes System+Output)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot output_to
+		(type INSTANCE)
+;+		(allowed-classes System+Output)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write)))
+
+(defclass System+IO
+	(is-a System+Component)
+	(role abstract))
+
+(defclass System+Input
+	(is-a System+IO)
+	(role concrete))
+
+(defclass System+Output
+	(is-a System+IO)
+	(role concrete))
+
+(defclass Reading
+	(is-a USER)
+	(role abstract)
+	(single-slot value
+		(type INTEGER)
+		(range 0 31)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot reads_from
+		(type INSTANCE)
+;+		(allowed-classes System+Component)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Input+Reading
+	(is-a Reading)
+	(role concrete)
+	(single-slot reads_from
+		(type INSTANCE)
+;+		(allowed-classes System+Input)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Sensor+Reading
+	(is-a Reading)
+	(role concrete)
+	(single-slot reads_from
+		(type INSTANCE)
+;+		(allowed-classes Sensor)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Output+Reading
+	(is-a Sensor+Reading)
+	(role concrete)
+	(single-slot reads_from
+		(type INSTANCE)
+;+		(allowed-classes Output+Sensor)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
