@@ -5,15 +5,13 @@
 		(output
 			[m1]
 			[p1])
-		(short-out 0)
-		(suspect no))
+		(short-out 0))
 
 	([a2] of adder
 		(input1 [p1])
 		(input2 [p2])
 		(output [out1])
-		(short-out 0)
-		(suspect no))
+		(short-out 0))
 
 	([circuit_1] of circuit
 		(has-components
@@ -30,8 +28,7 @@
 			[input_2]
 			[input_3]
 			[input_4])
-		(outputs [out1])
-		(suspect no))
+		(outputs [out1]))
 
 	([command_10_inp1] of command_data
 		(clock 10)
@@ -233,33 +230,25 @@
 		(object [input_4])
 		(value 8))
 
-	([input_1] of command
-		(suspect no))
+	([input_1] of command)
 
-	([input_2] of command
-		(suspect no))
+	([input_2] of command)
 
-	([input_3] of command
-		(suspect no))
+	([input_3] of command)
 
-	([input_4] of command
-		(suspect no))
+	([input_4] of command)
 
 	([m1] of sensor
-		(input [a1])
-		(suspect no))
+		(input [a1]))
 
 	([m2] of sensor
-		(input [p1])
-		(suspect no))
+		(input [p1]))
 
 	([m3] of sensor
-		(input [p2])
-		(suspect no))
+		(input [p2]))
 
 	([out1] of sensor
-		(input [a2])
-		(suspect no))
+		(input [a2]))
 
 	([p1] of multiplier
 		(input1 [input_2])
@@ -267,8 +256,7 @@
 		(output
 			[m2]
 			[a2])
-		(short-out 0)
-		(suspect no))
+		(short-out 0))
 
 	([p2] of multiplier
 		(input1 [input_3])
@@ -276,8 +264,7 @@
 		(output
 			[m3]
 			[a2])
-		(short-out 0)
-		(suspect no))
+		(short-out 0))
 
 	([reading_10_m1] of reading_data
 		(clock 10)

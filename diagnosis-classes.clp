@@ -1,12 +1,6 @@
 (defclass systemEntity
 	(is-a USER)
 	(role abstract)
-	(single-slot suspect
-		(type SYMBOL)
-		(allowed-values yes no)
-		(default no)
-		(create-accessor read-write))
-	;- ...
 	(single-slot calculated
 		(type SYMBOL)
 		(allowed-values yes no)
@@ -28,10 +22,6 @@
 (defclass sensor
 	(is-a component)
 	(role concrete)
-	(single-slot theoretical
-		(type INTEGER)
-		(range 0 31)
-		(create-accessor read-write))
 	(single-slot out
 		(type INTEGER)
 		(range 0 31)

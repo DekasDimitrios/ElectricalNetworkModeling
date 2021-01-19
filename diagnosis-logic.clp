@@ -1,3 +1,8 @@
+; Authors
+; Dimitris Dekas 3063
+; Konstantinos Papakostas 3064
+; Christina Kreza 3077
+
 (defrule initialize
     ?x <- (initial-fact) ; only run once
     =>
@@ -11,10 +16,9 @@
     ; calculate max clock
     (bind ?mc 1)
     ; for all reading data instances
-    (do-for-all-instances ((?rd reading_data)) (= 1 1)
-        (if (> ?rd:clock ?mc) then
-            (bind ?mc ?rd:clock)
-        )
+    ; with a clock value greater than max clock
+    (do-for-all-instances ((?rd reading_data)) (> ?rd:clock ?mc)
+        (bind ?mc ?rd:clock)
     )
     (assert (max clock ?mc))
     
@@ -32,7 +36,7 @@
     (retract ?x ?y)
 
     ; for all system entities
-    (do-for-all-instances ((?e systemEntity)) (= 1 1)
+    (do-for-all-instances ((?e systemEntity)) TRUE
         (bind ?class (class ?e))
         (bind ?slots (class-slots ?class inherit))
         ; for each of the instance's slots (including the inherited)
@@ -43,8 +47,8 @@
             (if (eq ?type INTEGER) then
                 (modify-instance ?e (?slot 0))
             )
-            ; if the slot name is "suspect" or "calculated", reset it to "no"
-            (if (or (eq ?slot suspect) (eq ?slot calculated)) then
+            ; if the slot name is "calculated", reset it to "no"
+            (if (eq ?slot calculated) then
                 (modify-instance ?e (?slot no))
             )
         )
@@ -147,10 +151,7 @@
                         ; otherwise, if it's a sensor,
                         ; set propagate its input as output
                         (bind ?out (send ?c:input get-out))
-                        (modify-instance ?c
-                            (out ?out)
-                            (theoretical ?out)
-                        )
+                        (send ?c put-out ?out)
 
                         ; if there's a mismatch between the reading and the output
                         (if (neq ?out ?c:reading) then
